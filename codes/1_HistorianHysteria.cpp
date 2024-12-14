@@ -28,14 +28,15 @@ int main() {
     //Iterators to traverse the sets
     auto it1 = list1.begin();
     auto it2 = list2.begin();
+    int i = 1;
     while(it1 != list1.end() || it2 != list2.end()){
         //Distance = |a-b|
         totalDistance += abs(*it1 - *it2);
         //Similarity = b.count(a)
         similarityScore += *it1 * list2.count(*it1);
 
-        cout << *it1 << " " << *it2 << "\t-Distance between: " << abs(*it1-*it2) << "\t-Similarity: " << list2.count(*it1) << endl;
-
+        cout << i << "\t" << *it1 << " - " << *it2 << "\t-Distance between: " << abs(*it1-*it2) << "\t-Similarity: " << list2.count(*it1) << endl;
+        ++i;
         ++it1;
         ++it2;
     }
